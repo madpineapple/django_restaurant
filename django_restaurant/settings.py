@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'e_store.urls'
+ROOT_URLCONF = 'django_restaurant.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'e_store.wsgi.application'
+WSGI_APPLICATION = 'django_restaurant.wsgi.application'
 
 
 # Database
