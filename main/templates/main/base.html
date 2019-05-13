@@ -29,11 +29,20 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'main-dMenu' %}">Daily Menu</a>
             </li>
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Staff logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile' %}">Staff Profile</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Staff login</a>
+              </li>
+            {% endif %}
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link disabled" href="#">Contact</a>
             </li>
           </ul>
         </div>
@@ -41,7 +50,7 @@
     </header>
 
       {% block content %}{% endblock %}
-    
+
 
 
 
