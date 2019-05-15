@@ -1,6 +1,11 @@
 from django.shortcuts import render
+from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
-from django.views.generic import ListView
+from django.views.generic import (ListView,
+    CreateView,
+    UpdateView,
+    DeleteView)
 from .models import dMenu
 
 
@@ -19,3 +24,15 @@ class dMenuListView(ListView):
     template_name = 'main/dMenu.html'
     context_object_name = 'post'
     ordering = ['-date_posted']
+
+class dMenuCreateView(CreateView):
+    model = dMenu
+    fields = ['title','description', 'price' ]
+
+    
+
+
+
+class dMenuUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
+    model = dMenu
+    fields = ['title', 'description', 'price']
