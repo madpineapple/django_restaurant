@@ -15,12 +15,16 @@ class dMenu(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('main-dMenu', kwargs={'pk':self.pk})
+        return reverse('main-dMenu')
 
 class bMenu(models.Model):
     bTitle = models.CharField(max_length=100)
     bDescription = models.TextField()
     bPrice = models.DecimalField(max_digits=100, decimal_places=2)
+    date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('main-bMenu')

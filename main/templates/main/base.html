@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" type="text/css" href="{% static 'main/main.css'%}">
 
+
   {% if title %}
     <title>Django_Restaurant - {{ title }}</title>
   {% else %}
@@ -42,7 +43,7 @@
               </li>
             {% endif %}
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Contact</a>
+              <a class="nav-link" href="{% url 'main-contact' %}">Contact</a>
             </li>
           </ul>
         </div>

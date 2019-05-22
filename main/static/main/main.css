@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
 body{
 background-color: #A0522D;
 margin-top: 5rem;
+
 }
 .nv-bar-clr{
   background-color: #8B4513;
 }
 
-h1, h5, p{
+h1,h2, h5, p{
   color: #000000;
+  font-family: 'Lobster', cursive;
 }
