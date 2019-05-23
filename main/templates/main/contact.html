@@ -1,5 +1,41 @@
 {% extends "main/base.html" %}
-
 {% block content %}
-<h1>contact us!</h1>
-{% endblock content %}
+<main role="main" class="container" align="center">
+  <div class="row">
+    <div class="col-xl-8 offset-xl-2 py-5">
+      <h1>contact us!</h1>
+      <p class="lead">
+        Please feel free to stop during business hours!
+        We have plenty of free parking and out door seating during summer months.
+        Stop by and see us soon, or call ahead for take out.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Address</h2>
+      <p>111 Easy Street</p>
+      <p>Burlington, Vt 05499</p>
+      <p>802-222-1111</p>
+      <h2>Hours</h2>
+      <p>Monday - Thursday 11am - 10pm</p>
+      <p>Friday & Saturday 11am - 11pm</p>
+      <p>Sunday 10am - 10pm</p>
+
+    </div>
+
+    <div class="col">
+      <h2>Email Us</h2>
+      <p>We welcome your questions, comments and suggestions.
+        Please contact us using the form below.</p>
+      <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-actions">
+        <button type="submit">Send</button>
+      </div>
+      </div>
+
+  </div>
+
+{% endblock %}

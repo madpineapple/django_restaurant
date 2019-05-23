@@ -30,6 +30,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'main-dMenu' %}">Daily Menu</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'main-bMenu' %}">Beverages</a>
+            </li>
             {% if user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">Staff logout</a>

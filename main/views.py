@@ -9,14 +9,17 @@ from django.views.generic import (ListView,
     UpdateView,
     DeleteView)
 from .models import dMenu, bMenu
+# sendemail/views.py
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
+from .forms import ContactForm
 
-
+# def statements for menu an home page
 
 def home(request):
     return render(request, 'main/home.html')
 
-def contact(request):
-    return render(request, 'main/contact.html')
 
 def posts(request):
     context ={
@@ -29,6 +32,29 @@ def bPosts(request):
     'bPost':dMenu.objects.all()
     }
     return render(request, 'main/bMenu.html', context)
+
+# def statements for contact forms
+# sendemail/views.py
+
+def contact(request):
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject, message, from_email, ['example@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('../../')
+    return render(request, "main/contact.html", {'form': form})
+
+
+
+# classes
 
 class dMenuListView(ListView):
     model = dMenu
