@@ -3,13 +3,16 @@
 body{
 background-color: #A0522D;
 margin-top: 5rem;
-
+margin-bottom: 5rem;
 }
+
 .nv-bar-clr{
   background-color: #8B4513;
 }
 
-h1,h2, h5, p{
+
+
+h1,h2,h3, h5, p{
   color: #000000;
   font-family: 'Lobster', cursive;
 }
