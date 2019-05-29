@@ -10,7 +10,21 @@ margin-bottom: 5rem;
   background-color: #8B4513;
 }
 
+.icon{
+  color: #000000;
+}
 
+.iconHuge{
+  color: #000000;
+  font-size: 100px;
+}
+
+.header{
+  color: #000000;
+  font-family: 'Lobster', cursive;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
 
 h1,h2,h3, h5, p{
   color: #000000;

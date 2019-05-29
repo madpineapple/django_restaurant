@@ -11,7 +11,7 @@
         </div>
       {% endfor %}
     {% endif %}
-  <h1>Beverages</h1>
+  <h1 class="header">Beverages</h1>
   {% if user.is_authenticated %}
         <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'bPost-create' %}">Add post</a>
   {% endif %}
